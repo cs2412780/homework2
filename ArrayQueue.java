@@ -1,5 +1,6 @@
 package homework2;
 
+
 /**
  * A class of queue whose entries are stored in a fixed-size array.
  * @author iang Dong
@@ -9,6 +10,7 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 
 	private final T[] array;
 	private int front;
+	private int back;
 	private int numberOfEntries;
 	private boolean initialized = false;
 	
@@ -19,6 +21,7 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 		array = tempArray;
 		numberOfEntries = 0;
 		front = 0;
+		back = array.length - 1;
 		initialized = true;
 		
 	}
@@ -28,8 +31,10 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 	public void enqueue(T newEntry) {
 		checkInitialization();
 		if(!isFull()) {
+			back++;
+			back = back % array.length;
+			array[back] = newEntry;	
 			numberOfEntries++;
-			array[indexOfRear()] = newEntry;	
 		}
 	}
 
@@ -92,10 +97,4 @@ public class ArrayQueue<T> implements QueueInterface<T>{
  		return numberOfEntries >= array.length;
  	}// end isFull
  	
- 	/*
- 	 * find the index of the rear entry in the queue
- 	 */
- 	private int indexOfRear() {
- 		return (front + numberOfEntries - 1) % array.length;
- 	}
 }

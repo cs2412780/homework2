@@ -5,19 +5,19 @@ public class App {
 
 	public static void main(String[] args) {
 
-		ArrayQueue<String> a = new ArrayQueue<>();
-		for(int i = 0; i < 20; i++ ) {
+		SingleLinkedDataQueue<String> a = new SingleLinkedDataQueue<>();
+		for(int i = 0; i < 10000; i++ ) {
 			a.enqueue(i + " ");
 			System.out.println(a.getFront());
-			System.out.println(a.dequeue());
+			//System.out.println(a.dequeue());
 		}
-		for(int i = 0; i < 13; i++ ) {
-			a.enqueue(i + " ");
+		for(int i = 0; i < 7; i++ ) {
+			//a.enqueue(i + " ");
+			//System.out.println(a.getFront());
+			//System.out.println(a.dequeue());
 		}
 		a.clear();
-		System.out.println(a.isEmpty());
-		
-		//a.getFront();
+		a.getFront();
 	}
 	
 	
