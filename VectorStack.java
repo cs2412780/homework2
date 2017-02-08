@@ -11,7 +11,7 @@ import java.util.Vector;
  */
 public class VectorStack<T> implements StackInterface<T>{
 	
-	Vector<T> vector;
+	private final Vector<T> vector;
 	private boolean initialized = false;
 	
 	/** Creates an empty vector. */

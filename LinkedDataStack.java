@@ -19,7 +19,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 	}
 
 	// Node contains data field and a reference to another node.
-	public class Node {
+	private class Node {
 		private T data;
 		private Node next;
 		
@@ -28,7 +28,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 		 * @param data the data
 		 * @param next the next node
 		 */
-		public Node(T data, Node next) {
+		private Node(T data, Node next) {
 			this.data = data;
 			this.next = next;
 		}
@@ -36,7 +36,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 		 * getData is a accessor method
 		 * @return the data field
 		 */
-		public T getData() {
+		private T getData() {
 			return data;
 		}
 		
@@ -44,7 +44,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 		 * a mutator method
 		 * @param data the data field
 		 */
-		public void setData(T data) {
+		private void setData(T data) {
 			this.data = data;
 		}
 		
@@ -52,7 +52,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 		 * a accessor method
 		 * @return the next node.
 		 */
-		public Node getNextNode() {
+		private Node getNextNode() {
 			return next;
 		}
 		
@@ -60,7 +60,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 		 * a mutator method
 		 * @param next the next node.
 		 */
-		public void setNextNode(Node next) {
+		private void setNextNode(Node next) {
 			 this.next = next;
 		}
 		
