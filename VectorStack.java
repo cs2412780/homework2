@@ -24,8 +24,8 @@ public class VectorStack<T> implements StackInterface<T>{
 	/** Adds a new entry to the top of this stack.
     @param newEntry  An object to be added to the stack. */
 	public void push(T newEntry) {
-		if(checkInitialization())
-			vector.addElement(newEntry);
+		checkInitialization();
+		vector.addElement(newEntry);
 	}
 
 	/** Removes and returns this stack's top entry.
@@ -60,11 +60,14 @@ public class VectorStack<T> implements StackInterface<T>{
 		vector.clear();
 	} // end StackInterface
 
-	/** Detects whether this stack is well initialized.
-    * @return  True if the stack is well initialized. 
-    */
-	private boolean checkInitialization() {
-		return initialized;
-	}
+	/** Throws an exception if this object is not initialized.
+     * 
+     */
+    private void checkInitialization()
+    {
+        if (!initialized)
+             throw new SecurityException("VectorStack object is not initialized " +
+                                        "properly.");
+   }
 
 }

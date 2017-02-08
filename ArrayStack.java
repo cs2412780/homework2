@@ -7,6 +7,7 @@ import java.util.EmptyStackException;
  * @author iang Dong
  *
  */
+
 public class ArrayStack<T> implements StackInterface<T>{
 	
 	private final T[] array;
@@ -86,12 +87,15 @@ public class ArrayStack<T> implements StackInterface<T>{
 		}
 	}
 	
-	/** Detects whether this stack is well initialized.
-    * @return  True if the stack is well initialized. 
-    */
-	private boolean checkInitialization() {
-		return initialized;
-	}
+	/** Throws an exception if this object is not initialized.
+     * 
+     */
+    private void checkInitialization()
+    {
+        if (!initialized)
+             throw new SecurityException("ArrayStack object is not initialized " +
+                                        "properly.");
+   }
 	
 	
 	/** Detects whether this stack is full.
