@@ -3,11 +3,18 @@ package homework2;
 import java.util.EmptyStackException;
 import java.util.Vector;
 
+
+/**
+ * A class of stack whose entries are stored in a vector.
+ * @author iang Dong
+ *
+ */
 public class VectorStack<T> implements StackInterface<T>{
 	
 	Vector<T> vector;
 	private boolean initialized = false;
 	
+	/** Creates an empty vector. */
 	public VectorStack() {
 		vector = new Vector<>();
 		initialized = true;
