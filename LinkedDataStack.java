@@ -104,7 +104,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 	/** Detects whether this stack is empty.
     @return  True if the stack is empty. */
 	public boolean isEmpty() {
-		return numberOfEntries == 0;
+		return numberOfEntries <= 0;
 	}
 
 	/** Removes all entries from this stack. */
