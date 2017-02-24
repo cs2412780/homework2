@@ -14,10 +14,15 @@ public class VectorStack<T> implements StackInterface<T>{
 	private final Vector<T> vector;
 	private boolean initialized = false;
 	
+	/** Creates an empty vector with 100 spaces. */
+	public VectorStack(int capacity) {
+		vector = new Vector<>(capacity);
+		initialized = true;
+	}
+	
 	/** Creates an empty vector. */
 	public VectorStack() {
-		vector = new Vector<>();
-		initialized = true;
+		this(10);
 	}
 	
 	
@@ -69,5 +74,13 @@ public class VectorStack<T> implements StackInterface<T>{
              throw new SecurityException("VectorStack object is not initialized " +
                                         "properly.");
    }
+    
+    /**
+     * this method
+     * @return the size of the vector
+     */
+    public int currentSize() {
+    	return vector.size();
+    }
 
 }

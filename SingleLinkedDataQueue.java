@@ -17,52 +17,52 @@ public class SingleLinkedDataQueue<T> implements QueueInterface<T> {
 	}
 	
 	// Node contains data field and a reference to another node.
-		private class Node {
-			private T data;
-			private Node next;
-			
-			/**
-			 * constructor that initiates the member fields.
-			 * @param data the data
-			 * @param next the next node
-			 */
-			private Node(T data, Node next) {
-				this.data = data;
-				this.next = next;
-			}
-			/**
-			 * getData is a accessor method
-			 * @return the data field
-			 */
-			private T getData() {
-				return data;
-			}
-			
-			/**
-			 * a mutator method
-			 * @param data the data field
-			 */
-			private void setData(T data) {
-				this.data = data;
-			}
-			
-			/**
-			 * a accessor method
-			 * @return the next node.
-			 */
-			private Node getNextNode() {
-				return next;
-			}
-			
-			/**
-			 * a mutator method
-			 * @param next the next node.
-			 */
-			private void setNextNode(Node next) {
-				 this.next = next;
-			}
-			
+	private class Node {
+		private T data;
+		private Node next;
+		
+		/**
+		 * constructor that initiates the member fields.
+		 * @param data the data
+		 * @param next the next node
+		 */
+		private Node(T data, Node next) {
+			this.data = data;
+			this.next = next;
 		}
+		/**
+		 * getData is a accessor method
+		 * @return the data field
+		 */
+		private T getData() {
+			return data;
+		}
+		
+		/**
+		 * a mutator method
+		 * @param data the data field
+		 */
+		private void setData(T data) {
+			this.data = data;
+		}
+		
+		/**
+		 * a accessor method
+		 * @return the next node.
+		 */
+		private Node getNextNode() {
+			return next;
+		}
+		
+		/**
+		 * a mutator method
+		 * @param next the next node.
+		 */
+		private void setNextNode(Node next) {
+			 this.next = next;
+		}
+		
+	}
 	/** Adds a new entry to the back of this queue.
 	   @param newEntry  An object to be added. */
 	public void enqueue(T newEntry) {

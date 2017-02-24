@@ -12,7 +12,7 @@ public class ArrayStack<T> implements StackInterface<T>{
 	
 	private final T[] array;
 	private int indexOfTopElement;
-	private static final int CAPACITY = 10;
+	private static final int CAPACITY = 100;
 	private boolean initialized = false;
 
 	/** Creates an empty bag whose initial capacity is 10. */
@@ -105,4 +105,7 @@ public class ArrayStack<T> implements StackInterface<T>{
 		return indexOfTopElement >= array.length - 1;
 	}// end isFull
 
+	public T[] toArray() {
+		return array;
+	}
 }

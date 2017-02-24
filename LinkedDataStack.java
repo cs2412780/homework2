@@ -60,6 +60,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 		 * a mutator method
 		 * @param next the next node.
 		 */
+		@SuppressWarnings("unused")
 		private void setNextNode(Node next) {
 			 this.next = next;
 		}
@@ -97,6 +98,7 @@ public class LinkedDataStack<T> implements StackInterface<T> {
 			throw new EmptyStackException();
 		}
 		else {
+			
 			return firstNode.getData();
 		}
 	}
