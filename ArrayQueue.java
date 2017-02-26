@@ -2,7 +2,7 @@ package homework2;
 
 
 /**
- * A class of queue whose entries are stored in a fixed-size array.
+ * A class of queue whose entries are stored in an array.
  * @author iang Dong
  *
  */
@@ -14,10 +14,15 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 	private int numberOfEntries;
 	private boolean initialized = false;
 	
-	/** Creates an empty bag whose initial capacity is 10. */
+	/** Creates an empty queue whose initial capacity is 10. */
 	public ArrayQueue() {
+		this(10);
+	}
+	
+	/** Creates an empty queue. */
+	public ArrayQueue(int capacity) {
 		@SuppressWarnings("unchecked")
-		T[] tempArray = (T[])new Object[10];
+		T[] tempArray = (T[])new Object[capacity];
 		array = tempArray;
 		numberOfEntries = 0;
 		front = 0;
