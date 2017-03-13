@@ -10,13 +10,13 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 
 	private final T[] array;
 	private int front;
-	private int back;
+	private int back;// first avaivable space
 	private int numberOfEntries;
 	private boolean initialized = false;
 	
-	/** Creates an empty queue whose initial capacity is 10. */
+	/** Creates an empty queue whose initial capacity is 10. Leaving one spot empty. */
 	public ArrayQueue() {
-		this(10);
+		this(11);
 	}
 	
 	/** Creates an empty queue. */
@@ -26,7 +26,7 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 		array = tempArray;
 		numberOfEntries = 0;
 		front = 0;
-		back = array.length - 1;
+		back = 0;
 		initialized = true;
 		
 	}
@@ -36,9 +36,9 @@ public class ArrayQueue<T> implements QueueInterface<T>{
 	public void enqueue(T newEntry) {
 		checkInitialization();
 		if(!isFull()) {
+			array[back] = newEntry;	
 			back++;
 			back = back % array.length;
-			array[back] = newEntry;	
 			numberOfEntries++;
 		}
 	}
@@ -99,7 +99,8 @@ public class ArrayQueue<T> implements QueueInterface<T>{
      * @return  True if the stack is full. 
      */
  	public boolean isFull() {
- 		return numberOfEntries >= array.length;
+ 		return numberOfEntries >= array.length - 1;
  	}// end isFull
+ 	
  	
 }

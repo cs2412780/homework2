@@ -105,7 +105,4 @@ public class ArrayStack<T> implements StackInterface<T>{
 		return indexOfTopElement >= array.length - 1;
 	}// end isFull
 
-	public T[] toArray() {
-		return array;
-	}
 }

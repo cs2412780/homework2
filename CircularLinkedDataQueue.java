@@ -2,13 +2,12 @@ package homework2;
 
 
 /*
- * /**
  * A class of queue whose entries are stored in a circular Linked Node.
  * @author iang Dong
  *
  */
  
-public class CircularLinkedData<T> implements QueueInterface<T>{
+public class CircularLinkedDataQueue<T> implements QueueInterface<T>{
 	private Node free;
 	private Node back;
 	private int numberOfEntries;
@@ -17,7 +16,7 @@ public class CircularLinkedData<T> implements QueueInterface<T>{
 	
 	
 	// initiate the circular linked data.
-	public CircularLinkedData() {
+	public CircularLinkedDataQueue() {
 		free = new Node(null,null);
 		back = free;
 		back.setNextNode(free);
@@ -153,4 +152,5 @@ public class CircularLinkedData<T> implements QueueInterface<T>{
 	             throw new SecurityException("CircularLinkedData object is not initialized " +
 	                                        "properly.");
 	   }
+	    
 }

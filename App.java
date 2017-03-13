@@ -5,7 +5,7 @@ public class App {
 
 	public static void main(String[] args) {
 
-		CircularLinkedData<Integer> a = new CircularLinkedData<>();
+		CircularLinkedDataQueue<Integer> a = new CircularLinkedDataQueue<>();
 		for(int i = 0; i < 9; i++ ) {
 			a.enqueue(i);
 			//System.out.println(a.dequeue());
